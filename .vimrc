@@ -5,14 +5,14 @@ set showmode
 "charactor display
 set list
 set listchars=tab:>-,trail:-,extends:>,precedes:<,nbsp:.
-"highlight WhitespaceEOL ctermbg=red guibg=red
-"match WhitespaceEOL /\s\+$/
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
 
 "indent
 set tabstop=4
 set shiftwidth=4
 set autoindent
-"set expandtab
+set expandtab
 
 "keymap
 imap jk <ESC>
@@ -22,3 +22,10 @@ imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-l> <Right>
 nmap <Space> :
+
+"plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'jiangmiao/auto-pairs'
+
+call plug#end()
