@@ -4,7 +4,7 @@ set showmode
 
 "charactor display
 set list
-set listchars=tab:>-,trail:-,extends:>,precedes:<,nbsp:.
+set listchars=tab:>-,trail:-
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 
