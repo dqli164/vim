@@ -6,12 +6,14 @@ set showmode
 filetype plugin on
 " cancel comment when return
 set fo-=r
-" complete command when click tab
-set wildmenu
-" delete anything when in insert mode
-set backspace=indent,eol,start
 
-" search
+" Move a line of text using ALT+[jk] or Command+[jk] on mac
+nmap <M-j> mz:m+<cr>`z
+nmap <M-k> mz:m-2<cr>`z
+vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+"" search
 set ignorecase
 set smartcase
 " autocmd
@@ -19,7 +21,8 @@ set smartcase
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 " highlight search result
 set hlsearch
-nmap <leader>sh :noh<CR>
+set incsearch
+nmap <leader>nh :noh<CR>
 
 " charactor display
 set list
@@ -35,9 +38,9 @@ set autoindent
 " set expandtab
 " autocmd FileType make setlocal noexpandtab
 nmap <tab> V>
-nmap <s-tab> V<
+nmap <S-tab> V<
 vmap <tab> >gv
-vmap <s-tab> <gv
+vmap <S-tab> <gv
 
 " keymap
 imap jk <ESC>
@@ -50,7 +53,7 @@ imap <C-l> <Right>
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = " "
+let mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
